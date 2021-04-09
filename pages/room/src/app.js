@@ -1,5 +1,3 @@
-
-
 const recordClick = function (recorderBtn) {
   this.recordingEnabled = false;
   return () => {
@@ -9,12 +7,29 @@ const recordClick = function (recorderBtn) {
 };
 
 const onload = () => {
+
   const urlParams = new URLSearchParams(window.location.search);
   const room = urlParams.get('room');
   console.log('this is the room', room);
 
-  const recorderBtn = document.getElementById('record');
-  recorderBtn.addEventListener('click', recordClick(recorderBtn));
+  // const recorderBtn = document.getElementById('record');
+  // recorderBtn.addEventListener('click', recordClick(recorderBtn));
+
+  const view = new View();
+  const media = new Media();
+  const deps = {
+    view,
+    media,
+    room
+  };
+
+  Business.initialize(deps);
+
+  // view.renderVideo({
+  //   userId: 'Rodrigo Marcel',
+  //   url: 'https://media.giphy.com/media/yFb5bKTItbB4dZ9xfd/giphy.mp4'
+  // });
+
 
 };
 

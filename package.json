@@ -13,5 +13,11 @@
   },
   "keywords": [],
   "author": "erickwendel",
-  "license": "MIT"
+  "license": "MIT",
+  "jshintConfig": {
+    "esversion": 8,
+    "devel": true,
+    "node": true,
+    "globals": {}
+  }
 }
