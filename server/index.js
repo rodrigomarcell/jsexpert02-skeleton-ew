@@ -19,9 +19,10 @@ io.on('connection', socket => {
     console.log('connection', socket.id);
     socket.on('join-room', (roomId, userId) => {
         socket.join(roomId);
+        
         socket.to(roomId).broadcast.emit('user-connected', userId);
        
-        socket.on('disconnected', () => {
+        socket.on('disconnect', () => {
             console.log('disconnected!', roomId, userId);
             socket.to(roomId).broadcast.emit('user-disconnected', userId);
         });

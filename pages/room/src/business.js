@@ -47,7 +47,7 @@ class Business {
 
     onUserDisconnected() {
         return userId => {
-            console.log('user Disconnected!', userId);
+            console.log('user disconnected!', userId);
         };
     }
 
